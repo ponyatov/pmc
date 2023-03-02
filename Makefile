@@ -74,3 +74,29 @@ GNU_Linux_updev:
 	sudo apt install -yu `cat apt.dev`
 
 gz:
+
+# merge
+MERGE  = Makefile README.md .clang-format .doxygen $(S) .gitignore
+MERGE += apt.dev apt.txt
+MERGE += .vscode bin doc lib inc src tmp
+
+dev:
+	git push -v
+	git checkout $@
+	git pull -v
+	git checkout shadow -- $(MERGE)
+	$(MAKE) doxy ; git add -f docs
+
+shadow:
+	git push -v
+	git checkout $@
+	git pull -v
+
+release:
+	git tag $(NOW)-$(REL)
+	git push -v --tags
+	$(MAKE) shadow
+
+ZIP = tmp/$(MODULE)_$(NOW)_$(REL)_$(BRANCH).zip
+zip:
+	git archive --format zip --output $(ZIP) HEAD
