@@ -1,0 +1,3 @@
+code meld doxygen clang-format
+g++
+libreadline-dev libpmem-dev

@@ -1,0 +1,71 @@
+{
+    "name": "pmc",
+    "scopeName": "script.pmc",
+    "fileTypes": [
+        "ini", "f"
+    ],
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#def"
+        },
+        {
+            "include": "#label"
+        },
+        {
+            "include": "#command"
+        },
+        {
+            "include": "#directive"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "patterns": [
+                {
+                    "comment": "line comment",
+                    "match": "(#.*$)",
+                    "name": "comment.line.number-sign"
+                }
+            ]
+        },
+        "def": {
+            "patterns": [
+                {
+                    "comment": "colon definition",
+                    "match": "(: +[a-zA-Z_]+$)",
+                    "name": "entity.name.function"
+                }
+            ]
+        },
+        "label": {
+            "patterns": [
+                {
+                    "comment": "jmp/call label",
+                    "match": "(@[a-zA-Z_]+$)",
+                    "name": "entity.name.tag"
+                }
+            ]
+        },
+        "command": {
+            "patterns": [
+                {
+                    "comment": "VM command",
+                    "match": "(nop)",
+                    "name": "keyword.control"
+                }
+            ]
+        },
+        "directive": {
+            "patterns": [
+                {
+                    "comment": "directive",
+                    "match": "(\\.[a-z]+)",
+                    "name": "keyword.directive"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "name": "pmc",
+    "displayName": "pmc",
+    "description": "Persistent Memory Compiler",
+    "version": "0.0.1",
+    "publisher": "dponyatov",
+    "author": {
+        "name": "Dmitry Ponyatov",
+        "email": "dponyatov@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.org/ponyatov/pmc/src/shadow/.vscode/pmc"
+    },
+    "homepage": "https://bitbucket.org/ponyatov/pmc",
+    "icon": "logo.png",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Debuggers",
+        "Notebooks",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "pmc.hello",
+                "title": "pmc Hello"
+            }
+        ],
+        "languages": [
+            {
+                "id": "pmc",
+                "aliases": [
+                    "pmc"
+                ],
+                "extensions": [
+                    ".ini", ".f"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "pmc",
+                "scopeName": "script.pmc",
+                "path": "./pmc.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "pmc",
+                "path": "./snippets.json"
+            }
+        ]
+    }
+}

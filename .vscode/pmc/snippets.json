@@ -1,0 +1,7 @@
+{
+    "colon definition": {
+        "prefix":      [":"],
+        "body":        [": ${TM_SELECTED_TEXT:colon}\n\t;\n"],
+        "description": "colon definition"
+    }
+}

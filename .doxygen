@@ -1,0 +1,16 @@
+PROJECT_NAME           = "pmc"
+PROJECT_BRIEF          = "Persistent Memory Compiler"
+PROJECT_LOGO           = .vscode/pmc/logo.png
+HTML_OUTPUT            = docs
+OUTPUT_DIRECTORY       =
+INPUT                  = README.md doc src inc
+EXCLUDE                = doc/mdoc doc/meta
+WARN_IF_UNDOCUMENTED   = NO
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = README.md
+GENERATE_LATEX         = NO
+FILE_PATTERNS         += *.lex *.yacc
+EXTENSION_MAPPING      = lex=C++ yacc=C++ ino=C++
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+LAYOUT_FILE            = doc/DoxygenLayout.xml
